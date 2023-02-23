@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es6", "dom"],
+    "types": ["node", "jest"],
+    "moduleResolution": "node",
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "removeComments": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "target": "es2017",
+    "outDir": "./lib",
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@constant/*": ["./src/core/constant/*"],
+      "@interface/*": ["./src/interface/*"],
+      "@service/*": ["./src/core/service/*"],
+      "@core/*": ["./src/core/*"],
+      "@type/*": ["./src/type/*"],
+      "src/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/**/*", "test"],
+  "exclude": ["./node_modules", "./lib"]
+}
