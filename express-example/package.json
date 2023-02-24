@@ -41,9 +41,10 @@
     "postversion": "git push && git push --tags"
   },
   "_moduleAliases": {
-    "@interface": "lib/interface",
     "@constant": "lib/core/constant",
     "@service": "lib/core/service",
+    "@interface": "lib/interface",
+    "@utilities": "lib/utilities",
     "@domain": "lib/domain",
     "@core": "lib/core",
     "@type": "lib/type",

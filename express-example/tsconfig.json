@@ -23,8 +23,9 @@
     "incremental": true,
     "paths": {
       "@constant/*": ["./src/core/constant/*"],
-      "@interface/*": ["./src/interface/*"],
       "@service/*": ["./src/core/service/*"],
+      "@interface/*": ["./src/interface/*"],
+      "@utilities/*": ["./src/type/*"],
       "@domain/*": ["./src/domain/*"],
       "@core/*": ["./src/core/*"],
       "@type/*": ["./src/type/*"],

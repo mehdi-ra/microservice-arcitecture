@@ -1,13 +1,14 @@
+import {userController} from '@domain/user/controller/user.controller';
+import {APIsConfig} from '@interface/shared/APIsConfig';
 import express from 'express';
-import {userController} from './controller/user.controller';
 
-const userApp = express();
+export const userApi = (function () {
+  return (_config: APIsConfig) => {
+    const userApp = express();
 
-export function userApi() {
-  userApp.use(userController);
-  userApp.listen(3001, () => {
-    console.log('hello and welcome');
-  });
-
-  console.log('hey body');
-}
+    userApp.use(userController);
+    userApp.listen(3001, () => {
+      console.log('hello and welcome');
+    });
+  };
+})();
