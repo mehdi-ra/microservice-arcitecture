@@ -19,11 +19,13 @@
     "target": "es2017",
     "outDir": "./lib",
     "baseUrl": "./",
+    "resolveJsonModule": true,
     "incremental": true,
     "paths": {
       "@constant/*": ["./src/core/constant/*"],
       "@interface/*": ["./src/interface/*"],
       "@service/*": ["./src/core/service/*"],
+      "@domain/*": ["./src/domain/*"],
       "@core/*": ["./src/core/*"],
       "@type/*": ["./src/type/*"],
       "src/*": ["./src/*"]

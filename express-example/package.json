@@ -44,6 +44,7 @@
     "@interface": "lib/interface",
     "@constant": "lib/core/constant",
     "@service": "lib/core/service",
+    "@domain": "lib/domain",
     "@core": "lib/core",
     "@type": "lib/type",
     "src": "."
