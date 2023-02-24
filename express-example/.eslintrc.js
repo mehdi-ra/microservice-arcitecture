@@ -16,5 +16,6 @@ module.exports = {
     'no-return-await': 'off',
     'new-cap': 'off',
     'arrow-body-style': 'off',
+		'object-shorthand': 'off',
   },
 };
