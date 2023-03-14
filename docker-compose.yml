@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  rabitmq:
+    container_name: message-broker
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+    env_file:
+      - ./.env

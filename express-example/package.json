@@ -4,13 +4,14 @@
   "description": "Amazing typescript starter",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
-  "repository": "https://github.com/me-dira/typescript-starter",
+  "repository": "https://github.com/mehdi-ra/typescript-starter",
   "author": "me-dira <mediraworkm@gmail.com>",
   "license": "MIT",
   "files": [
     "lib"
   ],
   "devDependencies": {
+    "@types/amqplib": "^0.10.1",
     "@types/eventsource": "^1.1.6",
     "@types/express": "^4.17.17",
     "@types/jest": "^26.0.24",
@@ -43,16 +44,23 @@
     "postversion": "git push && git push --tags"
   },
   "_moduleAliases": {
-    "@constant": "lib/core/constant",
-    "@service": "lib/core/service",
-    "@interface": "lib/interface",
+    "@repositories": "./src/domain/repositories",
+    "@models": "lib/domain/models",
+    "@services": "lib/domain/services",
+    "@infrastructures": "lib/infrastructures",
+    "@database": "lib/infrastructures/database",
+    "@external_service": "lib/infrastructures/external_service",
+    "@interfaces": "lib/interfaces",
+    "@controllers": "lib/interfaces/controllers",
+    "@gateways": "lib/interfaces/gateways",
+    "@shared": "lib/shared",
+    "@constants": "lib/shared/constants",
+    "@usecases": "lib/usecases",
     "@utilities": "lib/utilities",
-    "@domain": "lib/domain",
-    "@core": "lib/core",
-    "@type": "lib/type",
-    "src": "."
+    "src": "lib"
   },
   "dependencies": {
+    "amqplib": "^0.10.3",
     "express": "^4.18.2",
     "module-alias": "^2.2.2",
     "module-alias-jest": "^0.0.3",

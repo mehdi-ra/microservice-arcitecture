@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "class-transformer": "^0.5.1"
-  },
-  "devDependencies": {
-    "concurrency": "^0.1.4",
-    "nodemon": "^2.0.20"
-  }
-}
