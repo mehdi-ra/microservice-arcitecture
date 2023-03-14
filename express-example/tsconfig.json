@@ -20,28 +20,7 @@
     "outDir": "./lib",
     "baseUrl": "./",
     "resolveJsonModule": true,
-    "incremental": true,
-    "paths": {
-      "@repositories/*": ["./src/domain/repositories/*"],
-      "@models/*": ["./src/domain/models/*"],
-      "@services/*": ["./src/domain/services/*"],
-
-      "@infrastructures/*": ["./src/infrastructures/*"],
-      "@database/*": ["./src/infrastructures/database/*"],
-      "@external_service/*": ["./src/infrastructures/external_service/*"],
-
-      "@interfaces/*": ["./src/interfaces/*"],
-      "@controllers/*": ["./src/interfaces/controllers/*"],
-      "@gateways/*": ["./src/interfaces/gateways/*"],
-
-      "@shared/*": ["./src/shared/*"],
-      "@constants/*": ["./src/shared/constants/*"],
-
-      "@usecases/*": ["./src/usecases/*"],
-      "@utilities/*": ["./src/utilities/*"],
-
-      "src/*": ["./src/*"]
-    }
+    "incremental": true
   },
   "include": ["./src/**/*", "test"],
   "exclude": ["./node_modules", "./lib"]

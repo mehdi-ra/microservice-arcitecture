@@ -1,0 +1,4 @@
+export const MicroserviceTokens = {
+  MICROSERVICE_TOKEN: Symbol('MICROSERVICE_TOKEN'),
+  MICROSERVICE_TOKEN_OPTIONS: Symbol('MICROSERVICE_TOKEN'),
+};
