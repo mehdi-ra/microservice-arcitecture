@@ -15,7 +15,7 @@ export class Logger {
 
   public debug(message: any): void {
     if (this.debugMod) {
-      this.mainLogger.debug(message);
+      this.mainLogger.info(message);
     }
   }
 

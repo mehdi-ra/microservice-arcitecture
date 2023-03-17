@@ -1,6 +1,14 @@
+import {Router, Express} from 'express';
+
 export interface IMicroserviceOptions {
+  express: IMicroserviceExpressOptions;
   exchangeName: string;
-  queueName: string;
   routingKey: string;
-  port: number;
+  queueName: string;
+}
+
+export interface IMicroserviceExpressOptions {
+  routers?: Router[];
+  instance?: Express;
+  port?: number;
 }

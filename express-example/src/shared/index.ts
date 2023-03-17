@@ -22,9 +22,9 @@ SharedContainer.bind<IMainLogger>(SHARED_TOKENS.MAIN_LOGGER).toConstantValue(
 );
 
 SharedContainer.bind(Logger).toSelf();
-SharedContainer.bind<boolean>(SHARED_TOKENS.DEBUG).toConstantValue(false);
-SharedContainer.bind<ServicesRegistry>(SHARED_TOKENS.SERVICE_REGISTRY)
-  .to(ServicesRegistry)
+SharedContainer.bind<boolean>(SHARED_TOKENS.DEBUG).toConstantValue(true);
+SharedContainer.bind<ServicesRegistry>(ServicesRegistry)
+  .toSelf()
   .inSingletonScope();
 
 export {SharedContainer};

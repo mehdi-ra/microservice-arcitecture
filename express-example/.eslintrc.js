@@ -17,6 +17,7 @@ module.exports = {
     'new-cap': 'off',
     'arrow-body-style': 'off',
 		'object-shorthand': 'off',
-    'no-unused-vars': 'off'
+    'no-unused-vars': 'off',
+    'no-mixed-operators': 'off'
   },
 };

@@ -1,26 +1,30 @@
-import {Microservice} from '../../../../shared/utilities/microservice/decorator/Microservice.decorator';
-import {SHARED_TOKENS} from '../../../../shared/inversify_token';
+import {MicroserviceReplacement} from '../../../../shared/utilities/microservice/decorator/Microservice.decorator';
+import {options} from '../../../../shared/utilities/microservice/decorator/Options.decorator';
+import {ServicesRegistry} from '../../../../shared/utilities/ServicesRegistry';
+import {userController} from '../../interfaces/controllers/userController';
 import {Logger} from '../../../../shared/utilities/Logger';
-import {AppService} from 'src/shared/interfaces/Service';
 import {inject, injectable} from 'inversify';
-import {Express} from 'express';
+import EventEmitter from 'events';
 
-@Microservice({
-  exchangeName: 'user',
-  routingKey: 'userService',
-  queueName: 'services',
-  port: 3001,
-})
 @injectable()
-export class UserService implements AppService {
+@MicroserviceReplacement({
+  exchangeName: '',
+  queueName: '',
+  routingKey: '',
+  express: {
+    routers: [userController],
+    port: 3001,
+  },
+})
+export class UserService extends EventEmitter {
+  @options options: any; // This can be null because of asynchronous.
+
   constructor(
-    @inject(SHARED_TOKENS.EXPRESS_APP) express: Express,
     @inject(Logger) private logger: Logger,
+    @inject(ServicesRegistry) private registry: ServicesRegistry,
   ) {
-    express.listen(3001);
+    super();
   }
 
-  logOptions() {
-    console.log('change the world as you start');
-  }
+  logOptions() {}
 }
