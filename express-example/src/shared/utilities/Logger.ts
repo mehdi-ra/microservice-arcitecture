@@ -1,27 +1,25 @@
-import {createLogger, format, transports} from 'winston';
+import {inject, injectable} from 'inversify';
+import {IMainLogger} from '../interfaces/ILogger';
+import {SHARED_TOKENS} from '../inversify_token';
 
-const winstonLogger = createLogger({
-  level: 'info',
-  format: format.combine(format.timestamp(), format.json()),
-  transports: [
-    new transports.Console(),
-    new transports.File({filename: 'error.log', level: 'error'}),
-    new transports.File({filename: 'combined.log'}),
-  ],
-});
-
+@injectable()
 export class Logger {
-  constructor() {}
+  constructor(
+    @inject(SHARED_TOKENS.DEBUG) private debugMod: boolean,
+    @inject(SHARED_TOKENS.MAIN_LOGGER) private mainLogger: IMainLogger,
+  ) {}
 
   public log(message: any): void {
-    winstonLogger.info(message);
+    this.mainLogger.info(message);
   }
 
   public debug(message: any): void {
-    winstonLogger.debug(message);
+    if (this.debugMod) {
+      this.mainLogger.debug(message);
+    }
   }
 
   public error(message: any): void {
-    winstonLogger.error(message);
+    this.mainLogger.error(message);
   }
 }

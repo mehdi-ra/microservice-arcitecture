@@ -1,5 +1,8 @@
 import {connect} from 'amqplib';
-export const rabbitmqConnection = connect({
-  username: 'admin',
-  password: 'admin',
-});
+
+export const rabbitMQConnectionFactory = async function () {
+  return await connect({
+    username: 'admin',
+    password: 'admin',
+  });
+};

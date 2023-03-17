@@ -21,6 +21,8 @@
     "baseUrl": "./",
     "resolveJsonModule": true,
     "incremental": true
+    
+    
   },
   "include": ["./src/**/*", "test"],
   "exclude": ["./node_modules", "./lib"]
