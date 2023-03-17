@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  rabitmq:
+    container_name: message-broker
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+    env_file:
+      - ./.env
+
+
+  postgressql:
+    container_name: postressql
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: express_microservice
+    ports:
+      - "5431:5432"

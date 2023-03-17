@@ -19,15 +19,10 @@
     "target": "es2017",
     "outDir": "./lib",
     "baseUrl": "./",
-    "incremental": true,
-    "paths": {
-      "@constant/*": ["./src/core/constant/*"],
-      "@interface/*": ["./src/interface/*"],
-      "@service/*": ["./src/core/service/*"],
-      "@core/*": ["./src/core/*"],
-      "@type/*": ["./src/type/*"],
-      "src/*": ["./src/*"]
-    }
+    "resolveJsonModule": true,
+    "incremental": true
+    
+    
   },
   "include": ["./src/**/*", "test"],
   "exclude": ["./node_modules", "./lib"]
